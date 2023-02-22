@@ -2,10 +2,12 @@ import {GrFormPrevious, GrFormNext, GrSend} from "react-icons/gr"
 import UserForm from './components/UserForm'
 import ReviewForm from './components/ReviewForm'
 import Thanks from './components/Thanks'
-import './App.css'
+import Steps from "./components/Steps"
+import './css/App.css'
 
 //HOOKS
   import UseForm from './hooks/UseForm'
+  
 
 function App() {
 
@@ -22,7 +24,7 @@ function App() {
         </p>
       </div>
       <div className='form-container'>
-        <p>Etapas</p>
+        <Steps currentStep={currentStep}/>
         <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
           <div className='input-container'>
             {/**COMPONENTES DINÂMICOS */}

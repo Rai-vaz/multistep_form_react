@@ -1,0 +1,21 @@
+.avaliation{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.score-container svg{
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: .3rem;
+    transition: 0.3s;
+}
+
+.score-container svg:hover{
+    fill: #1b22ad;
+}
+
+.score-container input:checked ~ svg{
+    fill: #1b22ad;
+}
