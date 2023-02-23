@@ -8,7 +8,6 @@
 .score-container svg{
     font-size: 1.6rem;
     cursor: pointer;
-    margin-left: .3rem;
     transition: 0.3s;
 }
 
@@ -18,4 +17,23 @@
 
 .score-container input:checked ~ svg{
     fill: #1b22ad;
+}
+
+.radio-container{
+    text-align: center;
+    position: relative;
+}
+
+.radio-container input{
+    position: absolute;
+    opacity: 0;
+    top: 30px;
+    left: 30px;
+}
+
+.radio-container p{
+    font-style: italic;
+    font-weight: 300;
+    font-size: .9rem;
+    margin-top: .4rem;
 }

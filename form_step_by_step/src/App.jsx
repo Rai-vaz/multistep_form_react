@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import {GrFormPrevious, GrFormNext, GrSend} from "react-icons/gr"
 import UserForm from './components/UserForm'
 import ReviewForm from './components/ReviewForm'
@@ -10,10 +11,31 @@ import './css/App.css'
   
 
 function App() {
+  
+  const formTemplate = {
+    name: '',
+    email: '',
+    review: '',
+    comment: '',
+  }
 
-  const formComponents = [<UserForm/>, <ReviewForm/>, <Thanks/>]
+  const [data, setData] = useState(formTemplate)
+
+  const updateFieldHandler = (key, value) => {
+    setData((prev) => {
+      return {...prev, [key]: value}
+    })
+  }
+
+  const formComponents = [
+    <UserForm data={data} updateFieldHandler={updateFieldHandler}/>, 
+    <ReviewForm data={data} updateFieldHandler={updateFieldHandler}/>, 
+    <Thanks data={data}/>
+  ]
+
   //importando hook customizado e desestruturando
   const {currentStep, currentComponent, changeStep, isLastStep, isFirstStep} = UseForm(formComponents)
+
  
   return (
     <div className="App">
